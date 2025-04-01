@@ -41,7 +41,7 @@ bibliothèques react-scripts : https://www.npmjs.com/package/react-scripts
     - email
 - Etablissement
     - nom
-    - select (privé/public)
+    - radio (privé/public)
 - Situation 
     - Souhaite renouveler son adhésion à l'APIRP pour l'année scolaire [...]
     - Souhaite adhérer pour la première fois à l'APIRP pour l'année scolaire [...]
