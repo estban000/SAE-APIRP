@@ -63,7 +63,7 @@ const Adherer = () => {
                 <h3 className='h3'>Comment y adhérer ?</h3>
                 <p className='p'>Pour devenir membres il faut : remplir une fiche d’inscription ET verser annuellement une cotisation, dont le montant est fixé chaque année par le Conseil d’administration.</p>
                 <div id='formulaire-adhesion'>
-                    <form action='post'>
+                    <form action='#'>
                         <fieldset>
                             <legend>Identité</legend>
                             <Input id={"nom"} nom={"Nom"} type={"text"}></Input>
@@ -92,7 +92,48 @@ const Adherer = () => {
                                 </div>
                             </fieldset>
                         </fieldset>
-                        <button type="submit">Payer sur Paypal et adhérer</button>
+                        <fieldset>
+                            <legend>Adhésion</legend>
+                            <fieldset>
+                                <legend>Je ...</legend>
+                                <div className="input">
+                                    <div>
+                                        <input type="radio" name="adhesion" id="renouveler" value="renouveler"/>
+                                        <label htmlFor="renouveler">... souhaite renouveler son adhésion à l'APIRP pour l'année scolaire à suivre</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="adhesion" id="adherer" value="adherer"/>
+                                        <label htmlFor="adherer">... souhaite adhérer pour la première fois à l'APIRP, pour l'année scolaire à suivre</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="adhesion" id="changer" value="changer"/>
+                                        <label htmlFor="changer">... vous prie de noter le changement de coordonées</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="adhesion" id="quitter" value="quitter"/>
+                                        <label htmlFor="quitter">... ne ferais plus partie de l'APIRP à compter de demain</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Montant de la cotisation</legend>
+                                <div className="input">
+                                    <div>
+                                        <input type="radio" name="cotisation" id="normale" value="normale"/>
+                                        <label htmlFor="normale">23€ - cotisation normale</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="cotisation" id="soutien" value="soutien"/>
+                                        <label htmlFor="soutien">30 € - cotisation de soutien</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <div>
+                                <input type="checkbox" name="autorisaton" id="autorisaton" />
+                                <label htmlFor="autorisation">J'autorise l'APIRP à transmettre mes coordonées aux instances institutionelles (Ambassades italienne, Consulat italien, institut culturel italien)</label>
+                            </div>
+                        </fieldset>
+                        <button type="submit">Valider</button>
                     </form>
                 </div>
             </div>
