@@ -14,7 +14,7 @@ const Apprendre = () => {
     const universitiesDataParis = [
         {
             name: "Université Paris 3 Sorbonne Nouvelle",
-            logo: require('./img/logo_UNI_SorbonneNouvelle.png'),
+            logo: './img/logo_UNI_SorbonneNouvelle.png',
             website: "https://www.exemple1.com",
             courses: 
             <ul>
@@ -29,7 +29,7 @@ const Apprendre = () => {
         },
         {
             name: "Université Paris IV-Sorbonne",
-            logo: require('./img/logo_UNI_ParisSorbonne.png'),
+            logo: './img/logo_UNI_ParisSorbonne.png',
             website: "https://www.exemple2.com",
             courses: 
             <ul>
@@ -44,7 +44,7 @@ const Apprendre = () => {
       const universitiesDataCreteil = [
         {
             name: " I.U.T. de Saint Denis - Campus de La Plaine",
-            logo: require('./img/logo_IUT_StDenis.png'),
+            logo: './img/logo_IUT_StDenis.png',
             website: "www.iutsd.univ-paris13.fr",
             courses: 
             <ul>
@@ -53,7 +53,7 @@ const Apprendre = () => {
         },
         {
             name: "Paris Est Créteil Val de Marne (Paris XII)",
-            logo: require('./img/logo_UNI_Upec.png'),
+            logo: './img/logo_UNI_Upec.png',
             website: "http://www.u-pec.fr/",
             courses: 
             <ul>
@@ -62,7 +62,7 @@ const Apprendre = () => {
         },
         {
             name: "Université Vincennes-Saint-Denis (Paris VIII)",
-            logo: require('./img/logo_UNI_Paris8.png'),
+            logo: './img/logo_UNI_Paris8.png',
             website: "https://univ-paris8.fr",
             courses: 
             <ul>
@@ -75,7 +75,7 @@ const Apprendre = () => {
       const universitiesDataVersailles = [
         {
             name: "Université Paris X Nanterre",
-            logo: require('./img/logo_UNI_Nanterre.png'),
+            logo: './img/logo_UNI_Nanterre.png',
             website: "https://dep-italien.parisnanterre.fr",
             courses: 
             <ul>
@@ -99,7 +99,7 @@ const Apprendre = () => {
         },
         {
             name: " Université de Versailles / Saint Quentin",
-            logo: require('./img/logo_UNI_StQuentin.png'),
+            logo: './img/logo_UNI_StQuentin.png',
             website: "http://www.uvsq.fr/",
             courses: 
             <ul>
@@ -112,7 +112,7 @@ const Apprendre = () => {
         },
         {
             name: " Université d’Evry Val d’Essonne",
-            logo: require('./img/logo_UNI_Evry.png'),
+            logo: './img/logo_UNI_Evry.png',
             website: "http://www.univ-evry.fr/",
             courses: 
             <ul>

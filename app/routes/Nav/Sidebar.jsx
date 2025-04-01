@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 // Assets
-import CloseIcon from "../../assets/svg/CloseIcon";
-import LogoIcon from "../../assets/svg/Logo";
+import CloseIcon from "./img/svg/CloseIcon";
+import LogoIcon from "./img/svg/Logo";
 
 export default function Sidebar({ sidebarOpen, toggleSidebar }) {
 
@@ -22,7 +22,7 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
 
       <UlStyle className="flexNullCenter flexColumn">
             <li className="semiBold font15 pointer">
-              <a href="/accueil" onClick={() => toggleSidebar(!sidebarOpen)} style={{ padding: "10px 15px" }}>
+              <a href="/Accueil" onClick={() => toggleSidebar(!sidebarOpen)} style={{ padding: "10px 15px" }}>
                 Accueil
               </a>
             </li>
@@ -42,7 +42,7 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
               </a>
             </li>
             <li className="semiBold font15 pointer">
-              <a href="/adherer" 
+              <a href="/Adherer" 
               onClick={() => toggleSidebar(!sidebarOpen)} 
               style={{ padding: "10px 15px" }}>
                 Adhérer
@@ -54,17 +54,17 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
               </a>
             </li>
             <li className="semiBold font15 pointer">
-              <a href="/apprendre" onClick={() => toggleSidebar(!sidebarOpen)} style={{ padding: "10px 15px" }}>
+              <a href="/Apprendre" onClick={() => toggleSidebar(!sidebarOpen)} style={{ padding: "10px 15px" }}>
                 Apprendre
               </a>
             </li>
             <li className="semiBold font15 pointer">
-              <a href="/enseigner" onClick={() => toggleSidebar(!sidebarOpen)} style={{ padding: "10px 15px" }}>
+              <a href="/Enseigner" onClick={() => toggleSidebar(!sidebarOpen)} style={{ padding: "10px 15px" }}>
                 Enseigner
               </a>
             </li>
             <li className="semiBold font15 pointer">
-              <a href="/divers" onClick={() => toggleSidebar(!sidebarOpen)} style={{ padding: "10px 15px" }}>
+              <a href="/Divers" onClick={() => toggleSidebar(!sidebarOpen)} style={{ padding: "10px 15px" }}>
                 Divers
               </a>
             </li>

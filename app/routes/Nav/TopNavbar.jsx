@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 // Components
-import Sidebar from "../Nav/Sidebar";
-import Backdrop from "../Elements/Backdrop";
+import Sidebar from "./Nav/Sidebar";
+import Backdrop from "./Elements/Backdrop";
 // Assets
-import LogoIcon from "../../assets/svg/Logo";
-import BurgerIcon from "../../assets/svg/BurgerIcon";
+import LogoIcon from "./img/svg/Logo";
+import BurgerIcon from "./img/svg/BurgerIcon";
 
 export default function TopNavbar() {
   const [y, setY] = useState(window.scrollY);
@@ -25,7 +25,7 @@ export default function TopNavbar() {
       {sidebarOpen && <Backdrop toggleSidebar={toggleSidebar} />}
       <Wrapper className="flexCenter animate whiteBg" style={y > 100 ? { height: "60px" } : { height: "80px" }}>
         <NavInner className="container flexSpaceCenter">
-          <a href="/accueil" className="pointer flexNullCenter">
+          <a href="/Accueil" className="pointer flexNullCenter">
             <LogoIcon />
           </a>
           <BurderWrapper className="pointer" onClick={() => toggleSidebar(!sidebarOpen)}>
@@ -33,7 +33,7 @@ export default function TopNavbar() {
           </BurderWrapper>
           <UlWrapper className="flexNullCenter">
             <li className="semiBold font15 pointer">
-              <a href="/accueil" style={{ padding: "10px 15px" }}>
+              <a href="/Accueil" style={{ padding: "10px 15px" }}>
                 Accueil
               </a>
             </li>
@@ -53,7 +53,7 @@ export default function TopNavbar() {
               </a>
             </li>
             <li className="semiBold font15 pointer">
-              <a href="/adherer"  style={{ padding: "10px 15px" }}>
+              <a href="/Adherer"  style={{ padding: "10px 15px" }}>
                 Adhérer
               </a>
             </li>
@@ -63,17 +63,17 @@ export default function TopNavbar() {
               </a>
             </li>
             <li className="semiBold font15 pointer">
-              <a href="/apprendre"  style={{ padding: "10px 15px" }}>
+              <a href="/Apprendre"  style={{ padding: "10px 15px" }}>
                 Apprendre
               </a>
             </li>
             <li className="semiBold font15 pointer">
-              <a href="/enseigner"  style={{ padding: "10px 15px" }}>
+              <a href="/Enseigner"  style={{ padding: "10px 15px" }}>
                 Enseigner
               </a>
             </li>
             <li className="semiBold font15 pointer">
-              <a href="/divers"  style={{ padding: "10px 15px" }}>
+              <a href="/Divers"  style={{ padding: "10px 15px" }}>
                 Divers
               </a>
             </li>
