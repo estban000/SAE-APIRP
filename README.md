@@ -30,11 +30,34 @@ ligne.
  
 Pour lancer le site (application crée par la bias de Create React App ) vous devez utiliser les 
 bibliothèques react-scripts : https://www.npmjs.com/package/react-scripts 
- 
- 
- 
-  
 
+  
+# Formulaire d'adhésion
+- Identité
+    - nom
+    - prénom
+    - Adresse (n°, rue, code postal, ville)
+    - téléphone
+    - email
+- Etablissement
+    - nom
+    - select (privé/public)
+- Situation 
+    - Souhaite renouveler son adhésion à l'APIRP pour l'année scolaire [...]
+    - Souhaite adhérer pour la première fois à l'APIRP pour l'année scolaire [...]
+    - Vous prie de changer le changement de coordonées
+    - Ne fera plus partie de l'APIRP à dater du [...]
+
+    - montant de la cotisation
+        - 23€ cotisation normale
+        - 30€ cotisation de soutien
+
+    - autorise l'APIRP à transmettre mes coordonées aux instances institutionelles (Ambassades italienne, Consulat italien, institut culturel italien) OUI | NON
+
+- Date
+- Signature
+
+- Bouton Paiement
 
 
 
