@@ -1,9 +1,10 @@
 import React from 'react';
 import Hero from './Hero'; // Assure-toi d'importer le composant Hero correctement
 import './style/Adherer.css'; // Importe le fichier CSS pour le composant Adherer
-import FicheAdhesionPDF from '../assets/fiche_adhesion.pdf';
-import adhererImg from '../img/img-adherer.png'; // Chemin vers ton image
-import heroImage from '../img/drapeau_italie.jpg';
+// import FicheAdhesionPDF from '../assets/fiche_adhesion.pdf';
+import adhererImg from './img/img-adherer.png'; // Chemin vers ton image
+import heroImage from './img/drapeau_italie.jpg';
+import Input from './Elements/ElementFormulaire';
 
 const Adherer = () => {
     const title = "Adhérer à notre association";
@@ -55,14 +56,45 @@ const Adherer = () => {
                     </ol>
                 </div>
             </div>
-
+{/* Formulaire d'adhésion à l'association. */}
             <div className="adherer-content2">
                 <h2 className='h2'>Qui peut adhérer à l’association ?</h2>
                 <p className='p'>Peuvent faire partie de l’Association tous les professeurs d’italien de la région parisienne en activité ou à la retraite, quel que soit l’ordre d’enseignement auquel ils appartiennent.</p>
-                <h3>Comment y adhérer ?</h3>
+                <h3 className='h3'>Comment y adhérer ?</h3>
                 <p className='p'>Pour devenir membres il faut : remplir une fiche d’inscription ET verser annuellement une cotisation, dont le montant est fixé chaque année par le Conseil d’administration.</p>
-
-                <button className="button" onClick={() => window.open(FicheAdhesionPDF, '_blank')}>Télécharger la fiche d'adhésion</button>
+                <div id='formulaire-adhesion'>
+                    <form action='post'>
+                        <fieldset>
+                            <legend>Identité</legend>
+                            <Input id={"nom"} nom={"Nom"} type={"text"}></Input>
+                            <Input id={"prenom"} nom={"Prénom"} type={"text"}></Input>
+                            <div className="input">
+                                <label htmlFor="adresse">Adresse</label>
+                                <textarea name="adresse" id="adresse"></textarea>
+                            </div>
+                            <Input id={"telephone"} nom={"Téléphone"} type={"tel"}></Input>
+                            <Input id={"email"} nom={"Adresse email"} type={"email"}></Input>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Établissement</legend>
+                            <Input id={"etablissement"} nom={"Établissement"} type={"text"}></Input>
+                            <fieldset>
+                                <legend>Type</legend>
+                                <div className="input">
+                                    <div>
+                                        <input type="radio" name="type" id="public" value="public"/>
+                                        <label htmlFor="public">Public</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="type" id="prive" value="prive"/>
+                                        <label htmlFor="prive">Privé</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </fieldset>
+                        <button type="submit">Payer sur Paypal et adhérer</button>
+                    </form>
+                </div>
             </div>
             
         </div>
