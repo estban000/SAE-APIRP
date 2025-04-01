@@ -4,7 +4,7 @@ import './style/Adherer.css'; // Importe le fichier CSS pour le composant Adhere
 // import FicheAdhesionPDF from '../assets/fiche_adhesion.pdf';
 import adhererImg from './img/img-adherer.png'; // Chemin vers ton image
 import heroImage from './img/drapeau_italie.jpg';
-import Input from './Elements/ElementFormulaire';
+import InputTexte , {TextArea, InputRadio, InputCheckBox} from './Elements/ElementFormulaire';
 
 const Adherer = () => {
     const title = "Adhérer à notre association";
@@ -66,72 +66,42 @@ const Adherer = () => {
                     <form action='#'>
                         <fieldset>
                             <legend>Identité</legend>
-                            <Input id={"nom"} nom={"Nom"} type={"text"}></Input>
-                            <Input id={"prenom"} nom={"Prénom"} type={"text"}></Input>
-                            <div className="input">
-                                <label htmlFor="adresse">Adresse</label>
-                                <textarea name="adresse" id="adresse"></textarea>
-                            </div>
-                            <Input id={"telephone"} nom={"Téléphone"} type={"tel"}></Input>
-                            <Input id={"email"} nom={"Adresse email"} type={"email"}></Input>
+                            <InputTexte id={"nom"} nom={"Nom"} type={"text"}></InputTexte>
+                            <InputTexte id={"prenom"} nom={"Prénom"} type={"text"}></InputTexte>
+                            <TextArea id={"adresse"} nom={"Adresse"}></TextArea>
+                            <InputTexte id={"telephone"} nom={"Téléphone"} type={"tel"}></InputTexte>
+                            <InputTexte id={"email"} nom={"Adresse email"} type={"email"}></InputTexte>
                         </fieldset>
                         <fieldset>
                             <legend>Établissement</legend>
-                            <Input id={"etablissement"} nom={"Établissement"} type={"text"}></Input>
+                            <InputTexte id={"etablissement"} nom={"Établissement"} type={"text"}></InputTexte>
                             <fieldset>
                                 <legend>Type</legend>
                                 <div className="input">
-                                    <div>
-                                        <input type="radio" name="type" id="public" value="public"/>
-                                        <label htmlFor="public">Public</label>
-                                    </div>
-                                    <div>
-                                        <input type="radio" name="type" id="prive" value="prive"/>
-                                        <label htmlFor="prive">Privé</label>
-                                    </div>
+                                    <InputRadio name={"type"} id={"public"} nom={"Public"}></InputRadio>
+                                    <InputRadio name={"type"} id={"prive"} nom={"Privé"}></InputRadio>
                                 </div>
                             </fieldset>
                         </fieldset>
                         <fieldset>
                             <legend>Adhésion</legend>
                             <fieldset>
-                                <legend>Je ...</legend>
+                                <legend>Je souhaite ...</legend>
                                 <div className="input">
-                                    <div>
-                                        <input type="radio" name="adhesion" id="renouveler" value="renouveler"/>
-                                        <label htmlFor="renouveler">... souhaite renouveler son adhésion à l'APIRP pour l'année scolaire à suivre</label>
-                                    </div>
-                                    <div>
-                                        <input type="radio" name="adhesion" id="adherer" value="adherer"/>
-                                        <label htmlFor="adherer">... souhaite adhérer pour la première fois à l'APIRP, pour l'année scolaire à suivre</label>
-                                    </div>
-                                    <div>
-                                        <input type="radio" name="adhesion" id="changer" value="changer"/>
-                                        <label htmlFor="changer">... vous prie de noter le changement de coordonées</label>
-                                    </div>
-                                    <div>
-                                        <input type="radio" name="adhesion" id="quitter" value="quitter"/>
-                                        <label htmlFor="quitter">... ne ferais plus partie de l'APIRP à compter de demain</label>
-                                    </div>
+                                    <InputRadio name={"adhesion"} id={"renouveler"} nom={"... renouveler son adhésion à l'APIRP pour l'année scolaire à suivre"}></InputRadio>
+                                    <InputRadio name={"adhesion"} id={"adherer"} nom={"... adhérer pour la première fois à l'APIRP, pour l'année scolaire à suivre"}></InputRadio>
+                                    <InputRadio name={"adhesion"} id={"changer"} nom={"... changer mes coordonées"}></InputRadio>
+                                    <InputRadio name={"adhesion"} id={"quitter"} nom={"... quitter l'APIRP"}></InputRadio>
                                 </div>
                             </fieldset>
                             <fieldset>
                                 <legend>Montant de la cotisation</legend>
                                 <div className="input">
-                                    <div>
-                                        <input type="radio" name="cotisation" id="normale" value="normale"/>
-                                        <label htmlFor="normale">23€ - cotisation normale</label>
-                                    </div>
-                                    <div>
-                                        <input type="radio" name="cotisation" id="soutien" value="soutien"/>
-                                        <label htmlFor="soutien">30 € - cotisation de soutien</label>
-                                    </div>
+                                    <InputRadio name={"cotisation"} id={"normale"} nom={"23€ - cotisation normale"}></InputRadio>
+                                    <InputRadio name={"cotisation"} id={"soutien"} nom={"30 € - cotisation de soutien"}></InputRadio>
                                 </div>
                             </fieldset>
-                            <div>
-                                <input type="checkbox" name="autorisaton" id="autorisaton" />
-                                <label htmlFor="autorisation">J'autorise l'APIRP à transmettre mes coordonées aux instances institutionelles (Ambassades italienne, Consulat italien, institut culturel italien)</label>
-                            </div>
+                            <InputCheckBox id={"autorisation"} nom={"J'autorise l'APIRP à transmettre mes coordonées aux instances institutionelles (Ambassades italienne, Consulat italien, institut culturel italien)"}></InputCheckBox>
                         </fieldset>
                         <button type="submit">Valider</button>
                     </form>
