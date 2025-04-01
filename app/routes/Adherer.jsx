@@ -2,8 +2,8 @@ import React from 'react';
 import Hero from './Hero'; // Assure-toi d'importer le composant Hero correctement
 import './style/Adherer.css'; // Importe le fichier CSS pour le composant Adherer
 import FicheAdhesionPDF from '../assets/fiche_adhesion.pdf';
-import adhererImg from './img/img-adherer.png'; // Chemin vers ton image
-import heroImage from './img/drapeau_italie.jpg';
+import adhererImg from '../img/img-adherer.png'; // Chemin vers ton image
+import heroImage from '../img/drapeau_italie.jpg';
 
 const Adherer = () => {
     const title = "Adhérer à notre association";
