@@ -92,7 +92,7 @@ const Adherer = () => {
                             </FieldsetForm>    
                             <InputCheckBox id={"autorisation"} nom={"J'autorise l'APIRP à transmettre mes coordonées aux instances institutionelles (Ambassades italienne, Consulat italien, institut culturel italien)"}></InputCheckBox>
                         </FieldsetForm>
-                        <button type="submit">Valider</button>
+                        <button type="submit">Payer la cotisation via Paypal</button>
                     </form>
                 </div>
             </div>
