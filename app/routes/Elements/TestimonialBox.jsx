@@ -1,30 +1,17 @@
 import React from "react";
-import styled from "styled-components";
-// Assets
-import QuoteIcon from "../../assets/svg/Quotes";
 
 export default function TestimonialBox({ text, author }) {
   return (
-    <Wrapper className="darkBg radius8 flexNullCenter flexColumn">
-      <QuoteWrapper>
+    <div className="w-full p-5 mt-8 bg-dark rounded-lg flex flex-col items-center">
+      <div className="relative -top-10">
         <QuoteIcon />
-      </QuoteWrapper>
-      <p className="whiteColor font13" style={{ paddingBottom: "30px" }}>
+      </div>
+      <p className="text-white text-sm pb-8 text-center">
         {text}
       </p>
-      <p className="orangeColor font13" style={{alignSelf: 'flex-end'}}>
+      <p className="text-orange-500 text-sm self-end">
         <em>{author}</em>
       </p>
-    </Wrapper>
+    </div>
   );
 }
-
-const Wrapper = styled.div`
-  width: 100%;
-  padding: 20px 30px;
-  margin-top: 30px;
-`;
-const QuoteWrapper = styled.div`
-  position: relative;
-  top: -40px;
-`;

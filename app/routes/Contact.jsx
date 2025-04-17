@@ -10,7 +10,7 @@ import ProjectImg5 from "./assets/img/projects/bulletin5.png";
 import ProjectImg6 from "./assets/img/projects/bulletin6.png";
 import HeaderImage from "./assets/img/Contact/Header-Contact.jpg";
 
-export function Contact() {
+export function Contactcontenu() {
   return (
     <section className="pt-20 w-full min-h-[840px] flex items-center justify-center">
       <div className="flex flex-wrap w-full max-w-screen-xl">
@@ -186,5 +186,15 @@ export function Bulletin() {
         </div>
       </div>
     </section>
+  );
+}
+export default function Contact() {
+  return (
+    <>
+    <Contactcontenu />
+    <Assoc />
+    <Elu />
+    <Bulletin />
+    </>
   );
 }

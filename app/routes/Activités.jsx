@@ -26,8 +26,10 @@ export function HeaderActivités() {
   );
 }
 
-export function Activités() {
+export default function Activités() {
   return (
+    <>
+    <HeaderActivités />
     <section className="w-full pt-5">
       <div className="whiteBg">
         <div className="container">
@@ -86,5 +88,6 @@ export function Activités() {
         </div>
       </div>
     </section>
+    </>
   );
 }

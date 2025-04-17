@@ -1,111 +1,125 @@
-import React from "react";
+import { styled } from "styled-components";
+import { NavLink } from "@remix-run/react";
+import { useEffect } from "react";
 
-// Assets
+// Icônes et assets
 import CloseIcon from "../../assets/svg/CloseIcon";
 import LogoIcon from "../../assets/svg/Logo";
 
+// Liste des liens de navigation dans un tableau pour simplifier la gestion
+const menuItems = [
+  { label: "Accueil", path: "/" },
+  { label: "Forum", path: "/forum" },
+  { label: "Activités", path: "/activites" },
+  { label: "Nous contacter", path: "/contact" },
+  { label: "Adhérer", path: "/adherer" },
+  { label: "Promouvoir", path: "/promouvoir" },
+  { label: "Apprendre", path: "/apprendre" },
+  { label: "Enseigner", path: "/enseigner" },
+  { label: "Divers", path: "/divers" },
+];
+
+// Composant principal de la sidebar
 export default function Sidebar({ sidebarOpen, toggleSidebar }) {
+  // Log de l'état d'ouverture de la sidebar (utile en dev)
+  useEffect(() => {
+    console.log("Sidebar ouverte ?", sidebarOpen);
+  }, [sidebarOpen]);
+
   return (
-    <nav
-      className={`fixed top-0 right-0 w-[400px] h-screen bg-darkBg transition-all duration-300 ease-in-out ${
-        sidebarOpen ? "translate-x-0" : "-translate-x-[400px]"
-      } p-8 z-50`}
-    >
-      <div className="flex justify-between items-center">
-        <div className="flex items-center">
-          <LogoIcon />
-        </div>
-        <button
-          onClick={() => toggleSidebar(!sidebarOpen)}
-          className="p-2 bg-transparent outline-none border-0"
+    <SidebarWrapper sidebarOpen={sidebarOpen}>
+      {/* En-tête avec logo et bouton de fermeture */}
+      <SidebarHeader>
+        <LogoIcon />
+        <CloseBtn
+          onClick={() => toggleSidebar(false)} // Ferme la sidebar quand on clique sur le bouton
+          aria-label="Fermer le menu"
         >
           <CloseIcon />
-        </button>
-      </div>
+        </CloseBtn>
+      </SidebarHeader>
 
-      <ul className="flex flex-col space-y-5 mt-10">
-        <li>
-          <a
-            href="/Accueil"
-            onClick={() => toggleSidebar(!sidebarOpen)}
-            className="font-semibold text-sm px-6 py-3 block hover:bg-gray-200 rounded-md"
-          >
-            Accueil
-          </a>
-        </li>
-        <li>
-          <a
-            href="/Forum"
-            onClick={() => toggleSidebar(!sidebarOpen)}
-            className="font-semibold text-sm px-6 py-3 block hover:bg-gray-200 rounded-md"
-          >
-            Forum
-          </a>
-        </li>
-        <li>
-          <a
-            href="/Activités"
-            onClick={() => toggleSidebar(!sidebarOpen)}
-            className="font-semibold text-sm px-6 py-3 block hover:bg-gray-200 rounded-md"
-          >
-            Activités
-          </a>
-        </li>
-        <li>
-          <a
-            href="/Contact"
-            onClick={() => toggleSidebar(!sidebarOpen)}
-            className="font-semibold text-sm px-6 py-3 block hover:bg-gray-200 rounded-md"
-          >
-            Nous connaître
-          </a>
-        </li>
-        <li>
-          <a
-            href="/Adherer"
-            onClick={() => toggleSidebar(!sidebarOpen)}
-            className="font-semibold text-sm px-6 py-3 block hover:bg-gray-200 rounded-md"
-          >
-            Adhérer
-          </a>
-        </li>
-        <li>
-          <a
-            href="/Promouvoir"
-            onClick={() => toggleSidebar(!sidebarOpen)}
-            className="font-semibold text-sm px-6 py-3 block hover:bg-gray-200 rounded-md"
-          >
-            Promouvoir
-          </a>
-        </li>
-        <li>
-          <a
-            href="/Apprendre"
-            onClick={() => toggleSidebar(!sidebarOpen)}
-            className="font-semibold text-sm px-6 py-3 block hover:bg-gray-200 rounded-md"
-          >
-            Apprendre
-          </a>
-        </li>
-        <li>
-          <a
-            href="/Enseigner"
-            onClick={() => toggleSidebar(!sidebarOpen)}
-            className="font-semibold text-sm px-6 py-3 block hover:bg-gray-200 rounded-md"
-          >
-            Enseigner
-          </a>
-        </li>
-        <li>
-          <a
-            href="/Divers"
-            onClick={() => toggleSidebar(!sidebarOpen)}
-            className="font-semibold text-sm px-6 py-3 block hover:bg-gray-200 rounded-md"
-          >
-            Divers
-          </a>
-        </li>
-      </ul>
-    </nav>
+      {/* Liste des liens */}
+      <UlStyle>
+        {menuItems.map(({ label, path }) => (
+          <li key={path}>
+            <NavLink
+              to={path}
+              onClick={() => toggleSidebar(false)}
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : ""
+              }
+              // Ici tu pourrais ajouter onClick={() => toggleSidebar(false)} pour fermer la sidebar au clic sur un lien
+            >
+              {label}
+            </NavLink>
+          </li>
+        ))}
+      </UlStyle>
+    </SidebarWrapper>
   );
 }
+
+// ---------- Styles ----------
+
+// Conteneur principal de la sidebar
+const SidebarWrapper = styled.nav`
+  width: 400px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 30px;
+  background: #fff;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+
+  /* Animation de glissement et de fondu */
+  transform: ${(props) =>
+    props.sidebarOpen ? "translateX(0)" : "translateX(-100%)"};
+  opacity: ${(props) => (props.sidebarOpen ? "1" : "0")};
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+  /* En plein écran sur les très petits appareils */
+  @media (max-width: 400px) {
+    width: 100%;
+  }
+`;
+
+// En-tête avec le logo à gauche et le bouton fermer à droite
+const SidebarHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+`;
+
+// Bouton pour fermer la sidebar
+const CloseBtn = styled.button`
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 10px;
+`;
+
+// Liste des liens de la navigation
+const UlStyle = styled.ul`
+  padding: 40px;
+
+  li {
+    margin: 20px 0;
+
+    a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      padding: 10px 15px;
+      display: block;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background-color: #f1f1f1;
+      }
+    }
+  }
+`;

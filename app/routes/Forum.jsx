@@ -30,8 +30,10 @@ export function HeaderForum() {
   );
 }
 
-export function Forum() {
+export default function Forum() {
   return (
+    <>
+    <HeaderForum />
     <section className="w-full">
       <div className="container">
         <div className="flex justify-between py-24 mb-24 relative">
@@ -69,5 +71,6 @@ export function Forum() {
         </div>
       </div>
     </section>
+    </>
   );
 }

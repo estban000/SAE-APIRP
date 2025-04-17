@@ -36,7 +36,7 @@ const DiversPage = () => {
       </form>
       {/* Image ajoutée pour l'esthétique */}
       <img
-        src={'./img/paysage_italie.jpg'}
+        src={'./app/routes/img/paysage_italie.jpg'}
         alt="Image d'illustration"
         className="login-image img"
       />

@@ -31,8 +31,10 @@ export function HeaderPromouvoir() {
   );
 }
 
-export function Promouvoir() {
+export default function Promouvoir() {
   return (
+    <>
+    <HeaderPromouvoir />
     <section id="projects" className="w-full">
       <div className="bg-white">
         <div className="container">
@@ -99,5 +101,6 @@ export function Promouvoir() {
         </div>
       </div>
     </section>
+    </>
   );
 }
