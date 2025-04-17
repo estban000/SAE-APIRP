@@ -1,0 +1,78 @@
+form {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0 0.5rem;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.input label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.input input,
+.input textarea {
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 0.5rem;
+    accent-color: #008C45;
+}
+
+div>input[type="radio"],
+div>input[type="checkbox"] {
+    margin-top: 0.5rem;
+}
+
+div>label {
+    display: inline;
+}
+
+button[type="submit"] {
+    display: block;
+    margin: 1rem auto 0 auto;
+    padding: 0.75rem 2rem;
+    background-color: #008C45;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #008C45;
+}
