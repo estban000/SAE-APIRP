@@ -4,7 +4,7 @@ import './style/Adherer.css'; // Importe le fichier CSS pour le composant Adhere
 // import FicheAdhesionPDF from '../assets/fiche_adhesion.pdf';
 import adhererImg from './img/img-adherer.png'; // Chemin vers ton image
 import heroImage from './img/drapeau_italie.jpg';
-import InputTexte , {TextArea, InputRadio, InputCheckBox} from './Elements/ElementFormulaire';
+import InputTexte , {TextArea, InputRadio, InputCheckBox, FieldsetForm} from './Elements/ElementFormulaire';
 
 const Adherer = () => {
     const title = "Adhérer à notre association";
@@ -63,15 +63,22 @@ const Adherer = () => {
                 <h3 className='h3'>Comment y adhérer ?</h3>
                 <p className='p'>Pour devenir membres il faut : remplir une fiche d’inscription ET verser annuellement une cotisation, dont le montant est fixé chaque année par le Conseil d’administration.</p>
                 <div id='formulaire-adhesion'>
-                    <form action='#'>
-                        <fieldset>
+                    <form action='#' method='POST'>
+                        <FieldsetForm titre={"Identité"}>
+                            <InputTexte id={"nom"} nom={"Nom"} type={"text"}></InputTexte>
+                            <InputTexte id={"prenom"} nom={"Prénom"} type={"text"}></InputTexte>
+                            <TextArea id={"adresse"} nom={"Adresse"}></TextArea>
+                            <InputTexte id={"telephone"} nom={"Téléphone"} type={"tel"}></InputTexte>
+                            <InputTexte id={"email"} nom={"Adresse email"} type={"email"}></InputTexte>
+                        </FieldsetForm>
+                        {/* <fieldset>
                             <legend>Identité</legend>
                             <InputTexte id={"nom"} nom={"Nom"} type={"text"}></InputTexte>
                             <InputTexte id={"prenom"} nom={"Prénom"} type={"text"}></InputTexte>
                             <TextArea id={"adresse"} nom={"Adresse"}></TextArea>
                             <InputTexte id={"telephone"} nom={"Téléphone"} type={"tel"}></InputTexte>
                             <InputTexte id={"email"} nom={"Adresse email"} type={"email"}></InputTexte>
-                        </fieldset>
+                        </fieldset> */}
                         <fieldset>
                             <legend>Établissement</legend>
                             <InputTexte id={"etablissement"} nom={"Établissement"} type={"text"}></InputTexte>

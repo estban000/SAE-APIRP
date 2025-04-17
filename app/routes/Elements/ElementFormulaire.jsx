@@ -41,3 +41,12 @@ export function InputCheckBox({id, nom}){
         </div>
     );
 }
+
+export function FieldsetForm({titre, children}){
+    return (
+        <fieldset>
+            <legend>{titre}</legend>
+            {children}
+        </fieldset>
+    );
+}
