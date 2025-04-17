@@ -12,9 +12,11 @@ import dal from './img/dal.jpg';
 import raffaelloSuperstar from './img/raffaelloSuperstar.jpg';
 import lupi from './img/lupi.jpg';
 import portata from './img/portata.jpg';
+import Layout from './Layout'
 
 const Accueil = () => {
   return (
+    <Layout>
     <div className="accueil-container">
 
       <div className="hero">
@@ -146,6 +148,7 @@ const Accueil = () => {
 
       </div>
     </div>
+    </Layout>
   )
 }
 

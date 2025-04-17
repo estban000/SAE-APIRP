@@ -1,34 +1,19 @@
 import React from "react";
-import styled from "styled-components";
 
 export default function BlogBox({ tag, title, text, action, author }) {
   return (
-    <WrapperBtn className="animate pointer" onClick={action ? () => action() : null}>
-      <Wrapper className="whiteBg radius8 shadow">
-        <h3 className="font20 extraBold darkColor">{title}</h3>
-        <p className="font13" style={{ padding: "30px 0" }}>
-          {text}
-        </p>
-        <p className="font13 extraBold">{author}</p>
+    <button
+      className="animate pointer bg-transparent hover:opacity-50"
+      onClick={action ? () => action() : null}
+    >
+      <div className="whiteBg rounded-lg shadow p-6 mt-8 text-left">
+        <h3 className="text-xl font-extrabold text-dark">{title}</h3>
+        <p className="text-sm py-7">{text}</p>
+        <p className="text-sm font-extrabold">{author}</p>
         <div className="flex">
-          <p className="tag coralBg radius6 font13 extraBold">{tag}</p>
+          <p className="tag bg-coral rounded-full text-sm font-extrabold px-3 py-1">{tag}</p>
         </div>
-      </Wrapper>
-    </WrapperBtn>
+      </div>
+    </button>
   );
 }
-
-const Wrapper = styled.div`
-  width: 100%;
-  text-align: left;
-  padding: 20px 30px;
-  margin-top: 30px;
-`;
-const WrapperBtn = styled.button`
-  border: 0px;
-  outline: none;
-  background-color: transparent;
-  :hover {
-    opacity: 0.5;
-  }
-`;
