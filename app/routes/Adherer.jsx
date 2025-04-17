@@ -63,7 +63,7 @@ const Adherer = () => {
                 <h3 className='h3'>Comment y adhérer ?</h3>
                 <p className='p'>Pour devenir membres il faut : remplir une fiche d’inscription ET verser annuellement une cotisation, dont le montant est fixé chaque année par le Conseil d’administration.</p>
                 <div id='formulaire-adhesion'>
-                    <form action='#' method='POST'>
+                    <form action='#' method='GET'>{/* Méthode Get car la méthode Post renvoie "405 Method not allowed" */}
                         <FieldsetForm titre={"Identité"}>
                             <InputTexte id={"nom"} nom={"Nom"} type={"text"}></InputTexte>
                             <InputTexte id={"prenom"} nom={"Prénom"} type={"text"}></InputTexte>
@@ -71,45 +71,26 @@ const Adherer = () => {
                             <InputTexte id={"telephone"} nom={"Téléphone"} type={"tel"}></InputTexte>
                             <InputTexte id={"email"} nom={"Adresse email"} type={"email"}></InputTexte>
                         </FieldsetForm>
-                        {/* <fieldset>
-                            <legend>Identité</legend>
-                            <InputTexte id={"nom"} nom={"Nom"} type={"text"}></InputTexte>
-                            <InputTexte id={"prenom"} nom={"Prénom"} type={"text"}></InputTexte>
-                            <TextArea id={"adresse"} nom={"Adresse"}></TextArea>
-                            <InputTexte id={"telephone"} nom={"Téléphone"} type={"tel"}></InputTexte>
-                            <InputTexte id={"email"} nom={"Adresse email"} type={"email"}></InputTexte>
-                        </fieldset> */}
-                        <fieldset>
-                            <legend>Établissement</legend>
+                        <FieldsetForm titre={"Établissement"}>
                             <InputTexte id={"etablissement"} nom={"Établissement"} type={"text"}></InputTexte>
-                            <fieldset>
-                                <legend>Type</legend>
-                                <div className="input">
+                            <FieldsetForm titre={"Type"}>
                                     <InputRadio name={"type"} id={"public"} nom={"Public"}></InputRadio>
                                     <InputRadio name={"type"} id={"prive"} nom={"Privé"}></InputRadio>
-                                </div>
-                            </fieldset>
-                        </fieldset>
-                        <fieldset>
-                            <legend>Adhésion</legend>
-                            <fieldset>
-                                <legend>Je souhaite ...</legend>
-                                <div className="input">
-                                    <InputRadio name={"adhesion"} id={"renouveler"} nom={"... renouveler son adhésion à l'APIRP pour l'année scolaire à suivre"}></InputRadio>
-                                    <InputRadio name={"adhesion"} id={"adherer"} nom={"... adhérer pour la première fois à l'APIRP, pour l'année scolaire à suivre"}></InputRadio>
-                                    <InputRadio name={"adhesion"} id={"changer"} nom={"... changer mes coordonées"}></InputRadio>
-                                    <InputRadio name={"adhesion"} id={"quitter"} nom={"... quitter l'APIRP"}></InputRadio>
-                                </div>
-                            </fieldset>
-                            <fieldset>
-                                <legend>Montant de la cotisation</legend>
-                                <div className="input">
+                            </FieldsetForm>    
+                        </FieldsetForm>    
+                        <FieldsetForm titre={"Adhésion"}>
+                            <FieldsetForm titre={"Je souhaite ..."}>
+                                <InputRadio name={"adhesion"} id={"renouveler"} nom={"... renouveler son adhésion à l'APIRP pour l'année scolaire à suivre"}></InputRadio>
+                                <InputRadio name={"adhesion"} id={"adherer"} nom={"... adhérer pour la première fois à l'APIRP, pour l'année scolaire à suivre"}></InputRadio>
+                                <InputRadio name={"adhesion"} id={"changer"} nom={"... changer mes coordonées"}></InputRadio>
+                                <InputRadio name={"adhesion"} id={"quitter"} nom={"... quitter l'APIRP"}></InputRadio>
+                            </FieldsetForm>    
+                            <FieldsetForm titre={"Montant de la cotisation"}>
                                     <InputRadio name={"cotisation"} id={"normale"} nom={"23€ - cotisation normale"}></InputRadio>
                                     <InputRadio name={"cotisation"} id={"soutien"} nom={"30 € - cotisation de soutien"}></InputRadio>
-                                </div>
-                            </fieldset>
+                            </FieldsetForm>    
                             <InputCheckBox id={"autorisation"} nom={"J'autorise l'APIRP à transmettre mes coordonées aux instances institutionelles (Ambassades italienne, Consulat italien, institut culturel italien)"}></InputCheckBox>
-                        </fieldset>
+                        </FieldsetForm>
                         <button type="submit">Valider</button>
                     </form>
                 </div>

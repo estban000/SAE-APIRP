@@ -84,3 +84,9 @@
     text-transform: uppercase;
     margin-bottom: 30px;
 }
+
+/* FORMULAIRE */
+
+.formulaire-adhesion{
+    border: red 1px solid !important;
+}
